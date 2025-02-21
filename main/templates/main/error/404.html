@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% comment %} <meta name="google-site-verification" content="74WQyGwv2hLPMSS7k9xphZBQd5p1jz-5I02CYvwtKZo" /> {% endcomment %}
+    <title>Mod Flare Not found</title>
+    <style>
+        body {
+            background-color: #2f2f2f;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            word-wrap: break-word;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+
+        }
+        header {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .error-container {
+            max-width: 800px;
+            width: 100%;
+            padding: 18px 5px; 
+        }
+        a {
+            position: relative;
+            color: #ffffff;
+            transition: color 0.3s;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 0%;
+            height: 2px;
+            background-color: #ffffff;
+            transition: width 0.3s ease-in-out;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+        h3 {
+        font-size: 58px;
+        margin-bottom: 20px;
+
+        }
+
+        pre {
+            background-color: #2f2f2f;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+
+        @media (max-width: 1200px) {
+            a {
+                font-size: 16px;
+                padding: 8px 14px;
+            }
+            h3 {
+                font-size: 40px;
+            }
+        }
+
+
+        @media (max-width: 992px) {
+
+            a {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+            h3 {
+                font-size: 36px;
+            }
+
+        }
+
+        @media (max-width: 768px) {
+            a {
+                font-size: 10px;
+                padding: 4px 10px;
+            }
+            h3 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            a {
+                font-size: 8px;
+                padding: 2px 8px;
+            }
+            h3 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h3><pre><code>404</code></pre></h3>
+        <header>Page not found<br><br>Oops! This page was not found</header>
+        <a href="/">Return to home</a>
+    </div>
+</body>
+</html>
