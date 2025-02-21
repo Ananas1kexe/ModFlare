@@ -111,6 +111,7 @@
         }
         .user-info {
             display: flex;
+            flex-direction: column;
             align-items: center;
             gap: 10px;
         }
@@ -234,11 +235,123 @@
             line-height: 1.5; /* Улучшенная читаемость */
         }
         
-        .auto-mod-section p,
+        .auto-mod-section p {
+            text-align: center;
+            color: #222222;
+            font-size: 25px;
+        }
         .auto-mod-section h1 {
             text-align: center;
             color: #222222;
         }
+        
+
+
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+            
+            .hero p {
+                font-size: 30px;
+            }
+            
+            .hero .btn {
+                padding: 12px 25px;
+            }
+            
+            .header {
+                font-size: 18px;
+            }
+            
+            .header-links {
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            body {
+                padding-top: 20px;
+            }
+            
+            .hero {
+                padding: 20px;
+            }
+            
+            .hero-content {
+                max-width: 90%;
+                min-width: 100%;
+            }
+            
+            .hero h1 {
+                font-size: 30px;
+            }
+            
+            .hero p {
+                font-size: 25px;
+            }
+            
+            .hero .btn {
+                padding: 10px 20px;
+            }
+            
+            .header {
+                font-size: 16px;
+            }
+            
+            .header-links {
+                gap: 15px;
+            }
+            
+            .logout-btn, .login-btn {
+                font-size: 18px;
+                padding: 8px 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+        
+            .hero h1 {
+                font-size: 25px;
+            }
+            
+            .hero p {
+                font-size: 20px;
+            }
+            
+            .hero .btn {
+                padding: 8px 15px;
+            }
+            
+            .logout-btn, .login-btn {
+                font-size: 16px;
+                padding: 6px 12px;
+            }
+        }
+        
+        @media (min-width: 1025px) {
+            .hero-content {
+                max-width: 650px;
+                min-width: 450px;
+            }
+        
+            .hero h1 {
+                font-size: 50px;
+            }
+            
+            .hero p {
+                font-size: 40px;
+            }
+            
+            .hero .btn {
+                padding: 15px 30px;
+            }
+        }
+
     </style>
 
 </head>
@@ -272,7 +385,7 @@
             </div>
             {% else %}
             <div class="user-info">
-                <p>Пожалуйста войдите в свой аккаунт чтоб узнать информацию</p>
+                <p>Please login to your account to find out information.</p>
             </div>
             {% endif %} 
         </div>
@@ -284,13 +397,6 @@
             <p>Your user name: {{ request.session.user.username }}<br>
             <p>Your ID: {{ request.session.user.id }}<br>
             <p>Your avatar: <img src="https://cdn.discordapp.com/avatars/{{ request.session.user.id }}/{{ request.session.user.avatar }}.png" class="avatar" width="50"><br>
-            <p>Your email: {{ request.session.user.email }}<br>
-            <p>Your banner: {{ request.session.user.banner }}<br>
-
-            <p>Your locale: {{ request.session.user.locale }}<br>
-            <p>Your premium type: {{ request.session.user.premium_type }}<br>
-            <p>Your Public Flags: {{ request.session.user.public_flags }}<br>
-            <p>Your connections : {{ request.session.user.connections  }}</p>
 
         </div>
         {% endif %} 

@@ -391,7 +391,164 @@
             width: 100%;
         }
 
+
+        @media screen and (max-width: 600px) {
+            header {
+                flex-direction: column;
+                padding: 10px;
+            }
         
+            .header-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+        
+            .hero h1 {
+                font-size: 35px;
+            }
+        
+            .hero p {
+                font-size: 18px;
+            }
+        
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            .footer-left {
+                font-size: 14px;
+            }
+        
+            .footer-right {
+                flex-direction: column;
+            }
+        }
+        
+        @media screen and (max-width: 1024px) and (min-width: 601px) {
+            header {
+                flex-direction: row;
+                padding: 15px 30px;
+            }
+        
+            .hero h1 {
+                font-size: 40px;
+            }
+        
+            .hero p {
+                font-size: 20px;
+            }
+        
+            .footer-content {
+                flex-direction: row;
+                align-items: center;
+            }
+        
+            .footer-left {
+                font-size: 16px;
+            }
+        
+            .footer-right {
+                gap: 30px;
+            }
+        }
+        
+        @media screen and (min-width: 1025px) {
+            header {
+                flex-direction: row;
+                padding: 15px 40px;
+            }
+        
+            .hero h1 {
+                font-size: 50px;
+            }
+        
+            .hero p {
+                font-size: 23px;
+            }
+        
+            .footer-content {
+                flex-direction: row;
+                align-items: center;
+            }
+        
+            .footer-left {
+                font-size: 16px;
+            }
+        
+            .footer-right {
+                gap: 40px;
+            }
+        }
+
+
+
+        @media screen and (max-width: 480px) {
+        body {
+            padding-top: 20px; 
+        }
+
+        header {
+            padding: 10px 15px; 
+        }
+
+        .logo img {
+            width: 25px; 
+            height: 25px;
+        }
+
+        .header-links {
+            gap: 20px; 
+        }
+
+        .header {
+            font-size: 16px; 
+            padding: 8px 12px; 
+        }
+
+        .hero {
+            height: 40vh; 
+            padding: 20px; 
+        }
+
+        .hero h1 {
+            font-size: 30px; 
+        }
+
+        .hero p {
+            font-size: 18px; 
+        }
+
+        .hero .btn {
+            padding: 12px 25px; 
+            font-size: 18px;
+        }
+
+        .footer-content {
+            flex-direction: column; 
+            align-items: center; 
+        }
+
+        .footer-left,
+        .footer-right {
+            font-size: 14px; 
+            margin-bottom: 10px; 
+        }
+
+        .footer-columns {
+            flex-direction: column; 
+            gap: 20px; 
+        }
+
+        .footer-column ul li {
+            font-size: 14px; 
+        }
+
+        .devloper {
+            font-size: 14px;
+        }
+    }
+
 
     </style>
 
