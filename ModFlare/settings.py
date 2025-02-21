@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'main',
     
 ]
+SESSION_ENGINE = "django.contrib.sessions.backends.file"
+SESSION_FILE_PATH = "/tmp/django_sessions"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
