@@ -151,7 +151,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            height: 45vh;
+            height: 15vh;
             background-color: #3e3e3e;
             padding: 40px;
             position: relative;
@@ -190,7 +190,7 @@
 
         
         .hero p {
-            font-size: 23px;
+            font-size: 40px;
             margin-bottom: 20px;
             color: #e0e0e0;
         }
@@ -281,16 +281,16 @@
     <div class="auto-mod-section">
         {% if request.session.user %}
         <div class="user-info">
-            <p>Your user name: {{ request.session.user.username }}</p><br>
-            <p>Your ID: {{ request.session.user.id }}</p><br>
-            <p>Your avatar: <img src="https://cdn.discordapp.com/avatars/{{ request.session.user.id }}/{{ request.session.user.avatar }}.png" class="avatar" width="50"></p><br>
-            <p>Your email: {{ request.session.user.email }}</p><br>
-            <p>Your banner: {{ request.session.user.banner }}</p><br>
+            <p>Your user name: {{ request.session.user.username }}<br>
+            <p>Your ID: {{ request.session.user.id }}<br>
+            <p>Your avatar: <img src="https://cdn.discordapp.com/avatars/{{ request.session.user.id }}/{{ request.session.user.avatar }}.png" class="avatar" width="50"><br>
+            <p>Your email: {{ request.session.user.email }}<br>
+            <p>Your banner: {{ request.session.user.banner }}<br>
 
-            <p>Your locale: {{ request.session.user.locale }}</p><br>
-            <p>Your premium type: {{ request.session.user.premium_type }}</p><br>
-            <p>Your Public Flags: {{ request.session.user.public_flags }}</p><br>
-            <p>Your connections : {{ request.session.user.connections  }}</p><br>
+            <p>Your locale: {{ request.session.user.locale }}<br>
+            <p>Your premium type: {{ request.session.user.premium_type }}<br>
+            <p>Your Public Flags: {{ request.session.user.public_flags }}<br>
+            <p>Your connections : {{ request.session.user.connections  }}</p>
 
         </div>
         {% endif %} 
