@@ -12,6 +12,12 @@ logger = logging.getLogger(__name__)
 @ratelimit(key='ip', rate='5/s', method=['GET', 'POST'], block=True)
 def index(request):
     return render(request, 'main/index.html')
+
+@ratelimit(key='ip', rate='5/s', method=['GET', 'POST'], block=True)
+def user_info(request):
+    return render(request, 'main/user_info.html')
+
+
 def discord_login(request):
     discord_auth_url = (
         f'https://discord.com/api/oauth2/authorize'
