@@ -148,6 +148,7 @@
         
         .hero {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
@@ -155,15 +156,31 @@
             background-color: #3e3e3e;
             padding: 40px;
             position: relative;
-            flex-direction: column;
             border-bottom-right-radius: 50px;
             border-bottom-left-radius: 50px;
-        
+            max-width: 100%;
+            overflow: hidden;
         }
         
+        .hero h2, .hero p {
+            max-width: 650px;
+            color: white;
+        }
+        .button {
+            background-color: #ffcc00;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            text-decoration: none;
+            color: black;
+            margin-top: 10px;
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
+
+        }
         .hero-content {
             max-width: 650px;
             padding: 30px;
+            max-height:350px;
             background-color: #3e3e3e;
 
             {% comment %} background: rgba(0, 0, 0, 0.5); {% endcomment %}
@@ -524,7 +541,34 @@
             font-size: 18px;
         }
 
-        .footer-content {
+
+        footer {
+            padding: 30px 5%;
+          }
+          
+          .footer-content {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 15px;
+          }
+          
+          .footer-left,
+          .footer-right {
+            margin: 10px 0;
+          }
+          
+          .footer-columns {
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+          }
+          
+          .footer-right a {
+            font-size: 20px;
+          }
+      }
+        {% comment %} .footer-content {
             flex-direction: column; 
             align-items: center; 
         }
@@ -546,8 +590,8 @@
 
         .devloper {
             font-size: 14px;
-        }
-    }
+        } {% endcomment %}
+    
 
 
     </style>
@@ -576,8 +620,18 @@
     </header>
 
 
-
-    <div class="hero">
+    <section class="hero">
+        {% if request.session.user %}
+        <div class="user-info">
+            <p>Welcom {{ request.session.user.username }}#{{ request.session.user.discriminator }}</p>
+        </div>
+        {% endif %} 
+        <h2>ModFlare - is a reliable solution for automatic moderation and protection of your community.</h2>
+        <p>The service combines a convenient website and a powerful Discord bot to maintain order and block violators.</p>
+        <a href="about.html" class="btn">Find out more about us</a>
+    </section>
+    
+    {% comment %} <div class="hero">
         <div class="hero-content">
             {% if request.session.user %}
             <div class="user-info">
@@ -588,7 +642,7 @@
             <p>ModFlare - is a reliable solution for automatic moderation and <br>protection of your community. The service combines a convenient website and a powerful Discord bot to maintain order and block violators.</p>
             <a href="about.html" class="btn">Find out more about us</a>
         </div>
-    </div>
+    </div> {% endcomment %}
 
     <div class="auto-mod-section">
         <h1 class="auto-mod-heading">1) Auto Mod</h1>
@@ -682,6 +736,27 @@
             </div> {% endcomment %}
         </div>
     </footer>
+    <script>
+        
+        
+        let lastScrollTop = 0;
+        const header = document.querySelector('header');
 
+        window.addEventListener('scroll', () => {
+            let scrollTop = window.scrolly || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                header.style.transition = 'transform 0.5s ease';
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transition = 'transform 0.5s ease';
+                header.style.transform = 'translateY(0)';
+            }
+
+            lastScrollTop = scrollTop;
+        });
+
+
+    </script>
 </body>
 </html>
