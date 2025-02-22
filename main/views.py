@@ -30,6 +30,7 @@ def discord_login(request):
 
 def discord_callback(request):
     code = request.GET.get("code")
+    
     if not code:
         logger.error("Ошибка: Код авторизации не получен.")
         return redirect("discord_login")
@@ -68,6 +69,7 @@ def discord_callback(request):
         "username": user_data["username"],
         "avatar": user_data["avatar"],
         "discriminator": user_data["discriminator"],
+        "email": user_data["email", ''],
     }
 
     return redirect("/")
