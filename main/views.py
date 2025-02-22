@@ -21,10 +21,11 @@ def user_info(request):
 def discord_login(request):
     discord_auth_url = (
         f'https://discord.com/api/oauth2/authorize'
+        
         f'?client_id={settings.DISCORD_CLIENT_ID}'
         f"&redirect_uri={settings.DISCORD_REDIRECT_URI}"
         f"&response_type=code"
-        f"&scope=identify"
+        f"&scope=identify email guilds "
     )
     return redirect(discord_auth_url)
 
@@ -70,6 +71,8 @@ def discord_callback(request):
         "avatar": user_data["avatar"],
         "discriminator": user_data["discriminator"],
         "email": user_data.get("email", ''),
+        "guilds ": user_data.get("guilds ", []),
+
     }
 
     return redirect("/")

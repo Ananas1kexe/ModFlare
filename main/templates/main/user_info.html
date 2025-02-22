@@ -244,7 +244,46 @@
             text-align: center;
             color: #222222;
         }
+        .categories {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 10%;
+            flex-wrap: wrap;
+        }
         
+        .category-image {
+            width: 400px; 
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            margin: 10px;
+        }
+        .category-content {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .category h2 {
+            font-size: 28px;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+        
+        .category p {
+            font-size: 16px;
+            color: #e0e0e0;
+        }
 
 
         @media (max-width: 1024px) {
@@ -391,7 +430,44 @@
         </div>
     </div>
 
-    <div class="auto-mod-section">
+
+    <div class="categories">
+        {% if request.session.user %}
+        <div class="category-image">
+            <div class="category-content">
+                <h2>Your user name:</h2>
+                <p>{{ request.session.user.username }}</p>
+            </div>
+        </div>
+        <div class="category-image" >
+            <div class="category-content">
+                <h2>Your ID:</h2>
+                <p>{{ request.session.user.id }}</p>
+            </div>
+        </div>
+        <div class="category-image">
+            <div class="category-content">
+                <h2>Your avatar:</h2>
+                <p><img src="https://cdn.discordapp.com/avatars/{{ request.session.user.id }}/{{ request.session.user.avatar }}.png" class="avatar" width="50"></p>
+            </div>
+        </div>
+        <div class="category-image">
+            <div class="category-content">
+                <h2>Your email:</h2>
+                <p>{{ request.session.user.email }}</p>
+            </div>
+        </div>
+        <div class="category-image">
+            <div class="category-content">
+                <h2>Your guilds:</h2>
+                <p>{{ request.session.user.guilds }}</p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+
+    {% comment %} <div class="auto-mod-section">
         {% if request.session.user %}
         <div class="user-info">
             <p>Your user name: {{ request.session.user.username }}<br>
@@ -401,7 +477,7 @@
 
         </div>
         {% endif %} 
-    </div>
+    </div> {% endcomment %}
 
 </body>
 </html>
