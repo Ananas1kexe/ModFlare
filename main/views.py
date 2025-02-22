@@ -25,9 +25,10 @@ def discord_login(request):
         f'?client_id={settings.DISCORD_CLIENT_ID}'
         f"&redirect_uri={settings.DISCORD_REDIRECT_URI}"
         f"&response_type=code"
-        f"&scope=identify email guilds guilds.member.read"
+        f"&scope=identify email guilds guilds.members.read"
     )
     return redirect(discord_auth_url)
+
 
 def discord_callback(request):
     code = request.GET.get("code")
