@@ -460,6 +460,14 @@
         <div class="category-image">
             <div class="category-content">
                 <h2>Your guilds:</h2>
+                <ul>
+                    {% for guild in request.session.user.guilds %}
+                        <li>{{guild.name}}</li>
+                    {%empty%}
+                        <p>You are not in any guilds.</p>
+                    {% endfor %}
+                
+                <ul>
                 <p>{{ request.session.user.guilds }}</p>
             </div>
         </div>
