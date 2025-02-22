@@ -70,6 +70,11 @@
             margin-right: 10px;
             border-radius: 50%;
         }
+
+        .logo a {
+            color: #ffffff;
+            text-decoration: none;
+        }
         
         .header-links {
             display: flex;
@@ -398,7 +403,7 @@
 <body>    
     <header>
         <div class='logo'>
-            <h3>Mod Flare | User information</h3>
+            <h3><a href='/'>Mod Flare | User information</a></h3>
         
         </div>
 
@@ -462,13 +467,12 @@
                 <h2>Your guilds:</h2>
                 <ul>
                     {% for guild in request.session.user.guilds %}
-                        <li>{{guild.name}}</li>
+                        <li>{{ guild.name }}</li>
                     {%empty%}
                         <p>You are not in any guilds.</p>
                     {% endfor %}
-                
-                <ul>
-                <p>{{ request.session.user.guilds }}</p>
+                </ul>
+                {% comment %} <p>{{ request.session.user.guilds }}</p> {% endcomment %}
             </div>
         </div>
         {% endif %}

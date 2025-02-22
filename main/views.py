@@ -25,7 +25,7 @@ def discord_login(request):
         f'?client_id={settings.DISCORD_CLIENT_ID}'
         f"&redirect_uri={settings.DISCORD_REDIRECT_URI}"
         f"&response_type=code"
-        f"&scope=identify email guilds"
+        f"&scope=identify email guilds guilds.member.read"
     )
     return redirect(discord_auth_url)
 
@@ -71,7 +71,7 @@ def discord_callback(request):
         "avatar": user_data["avatar"],
         "discriminator": user_data["discriminator"],
         "email": user_data.get("email", ''),
-        "guilds ": user_data.get("guilds ", []),
+        "guilds ": user_data.get("guilds", []),
 
     }
 
