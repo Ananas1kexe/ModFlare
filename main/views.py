@@ -69,7 +69,7 @@ def discord_callback(request):
         "username": user_data["username"],
         "avatar": user_data["avatar"],
         "discriminator": user_data["discriminator"],
-        "email": user_data.get["email", ''],
+        "email": user_data.get("email", ''),
     }
 
     return redirect("/")
