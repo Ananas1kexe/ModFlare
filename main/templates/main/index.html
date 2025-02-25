@@ -572,31 +572,6 @@
             font-size: 20px;
           }
       }
-        {% comment %} .footer-content {
-            flex-direction: column; 
-            align-items: center; 
-        }
-
-        .footer-left,
-        .footer-right {
-            font-size: 14px; 
-            margin-bottom: 10px; 
-        }
-
-        .footer-columns {
-            flex-direction: column; 
-            gap: 20px; 
-        }
-
-        .footer-column ul li {
-            font-size: 14px; 
-        }
-
-        .devloper {
-            font-size: 14px;
-        } {% endcomment %}
-    
-
 
     </style>
 
@@ -605,12 +580,11 @@
     <header>
         <div class='logo'>
             <h3><a href='/'>Mod Flare</a></h3>
-        
         </div>
 
         <nav class="header-links">
             <a href="about" class="header">About Us</a>
-
+            <a href="https://discord.com/oauth2/authorize?client_id=1342459857785061398&permissions=8&integration_type=0&scope=applications.commands+bot" class="header">Add bot</a>
             {% if request.session.user %}
             <div class="user-info">
                 <img src="https://cdn.discordapp.com/avatars/{{ request.session.user.id }}/{{ request.session.user.avatar }}.png" class="avatar" width="50">
@@ -630,23 +604,11 @@
             <p>Welcom {{ request.session.user.username }}#{{ request.session.user.discriminator }}</p>
         </div>
         {% endif %} 
-        <h2>ModFlare - is a reliable solution for automatic moderation and protection of your community.</h2>
-        <p>The service combines a convenient website and a powerful Discord bot to maintain order and block violators.</p>
+        <h2>ModFlare - is a smart and efficient tool for reporting and managing rule violations within your community</h2>
+        <p>The bot allows users to easily report inappropriate behavior with a simple command, ensuring swift action by moderators. Integrated seamlessly with Discord, it helps keep your server safe and organized at all times.</p>
         <a href="about.html" class="btn">Find out more about us</a>
     </section>
     
-    {% comment %} <div class="hero">
-        <div class="hero-content">
-            {% if request.session.user %}
-            <div class="user-info">
-                <p>Welcom {{ request.session.user.username }}#{{ request.session.user.discriminator }}</p>
-            </div>
-            {% endif %} 
-            <h1>Mod Flare</h1>
-            <p>ModFlare - is a reliable solution for automatic moderation and <br>protection of your community. The service combines a convenient website and a powerful Discord bot to maintain order and block violators.</p>
-            <a href="about.html" class="btn">Find out more about us</a>
-        </div>
-    </div> {% endcomment %}
 
     <div class="auto-mod-section">
         <h1 class="auto-mod-heading">1) Auto Mod</h1>
@@ -658,10 +620,7 @@
         <p class="auto-mod-text">Convenient setup - you can easily configure the bot for your roles, rights, etc.</p>
     </div>
     
-    {% comment %} <div class="auto-mod-section">
-        <h1 class="auto-mod-heading">3) Еще один Мод</h1>
-        <p class="auto-mod-text">Тут текст не большой про авто мод. Вы можете подробно рассказать о функционале или особенностях.</p>
-    </div> {% endcomment %}
+
     
     
 

@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django_ratelimit.decorators import ratelimit
 from django.conf import settings
 import logging
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -66,17 +67,28 @@ def discord_callback(request):
         return redirect("discord_login")
 
     user_data = user_response.json()
+    user_id = user_data['id']
+    
     request.session["user"] = {
         "id": user_data["id"],
         "username": user_data["username"],
         "avatar": user_data["avatar"],
         "discriminator": user_data["discriminator"],
         "email": user_data.get("email", ''),
-        "guilds ": user_data.get("guilds", []),
-
+        "guilds": user_data.get("guilds", []),
     }
+    
+    bot_url = 'https://your-bot-host.repl.co/grant_role'
+    bot_data = {'user_id': user_id}
+    bot_response = requests.post(bot_url, json=bot_data)
+    
+    if bot_response.status_code == 200:
+        return redirect('/')
+    else:
+        return HttpResponse('<h1>Error</h1>\n<a href="/">Return home </a>')
+    
 
-    return redirect("/")
+
 
 def logout_view(request):
     """Выход пользователя (очистка сессии)."""
