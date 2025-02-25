@@ -77,8 +77,9 @@ def discord_callback(request):
         "email": user_data.get("email", ''),
         "guilds": user_data.get("guilds", []),
     }
-    
-    bot_url = 'https://your-bot-host.repl.co/grant_role'
+    bot_url = 'https://mod-flare-bot.repl.co/grant_role'
+
+    # bot_url = 'https://your-bot-host.repl.co/grant_role'
     bot_data = {'user_id': user_id}
     bot_response = requests.post(bot_url, json=bot_data)
     
